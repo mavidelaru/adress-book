@@ -1,0 +1,46 @@
+<div class="container">
+<form [formGroup]="form">
+
+  <div class="form-group col-12 col-sm-6">
+    <label class="input-label" id="contName">Name</label>
+    <input type="text" id="name" name="txtName" formControlName="name" class="form-control" placeholder="Enter your name" />
+    <p id="name1" class="text-danger"></p>
+    <p id="name2" class="text-success"></p>
+  </div>
+
+  <div class="form-group col-12 col-sm-6">
+    <label class="input-label" for="surname" id="contSurname">Surname</label>
+    <input type="text" id="surname" name="txtSurame" formControlName="surname"  class="form-control" placeholder="Enter your surname" />
+    <p id="surname1" class="text-danger"></p>
+    <p id="surname2" class="text-success"></p>
+  </div>
+
+  <div class="form-group col-12 col-sm-6">
+    <label class="input-label" for="email" id="contEmail">Email</label>
+    <input type="text" id="email" name="txtEmail" formControlName="email"  class="form-control" placeholder="Enter your email" />
+    <p id="email1" class="text-danger"></p>
+    <p id="email2" class="text-success"></p>
+  </div>
+
+  <div class="form-group col-12 col-sm-6">
+    <label class="input-label" for="country" id="contCountry">Country</label>
+
+    <select formControlName="country" class="form-control-select" placeholder="test">
+      <option *ngFor="let country of countryList" [value]="country">
+        {{country}}</option>
+    </select>
+  </div>
+
+  <div class="form-group col-12 col-sm-6">
+    <label class="input-label" for="details" id="contDetails">Details</label>
+    <input type="text" id="details" formControlName="details"  name="txtDetails" class="form-control" placeholder="Enter any details" />
+  </div>
+
+</form>
+
+<div class="button-container">
+  <button type="button" class="mainButton" (click)='back()'>Back</button>
+  <button type="button" class="mainButton" (click)='onSubmit()' >Submit</button>
+</div>
+
+</div>
